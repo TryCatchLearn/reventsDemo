@@ -1,5 +1,5 @@
 import React from 'react';
-import { Segment, List, Item, Label } from 'semantic-ui-react';
+import { Segment, List, Item, Label, ItemImage } from 'semantic-ui-react';
 
 const EventDetailedSidebar = ({ attendees }) => {
   const isHost = false;
@@ -17,7 +17,7 @@ const EventDetailedSidebar = ({ attendees }) => {
         {attendees && attendees.length === 1 ? 'Person' : 'People'} going
       </Segment>
       <Segment attached>
-        <List relaxed divided>
+        <Item.Group divided>
           {attendees &&
             attendees.map(attendee => (
               <Item key={attendee.id} style={{ position: 'relative' }}>
@@ -30,13 +30,13 @@ const EventDetailedSidebar = ({ attendees }) => {
                     Host
                   </Label>
                 )}
-                <Item.Image size='tiny' src={attendee.photoURL} />
+                <ItemImage size='tiny' src={attendee.photoURL} />
                 <Item.Content verticalAlign='middle'>
                   <Item.Header as='h3'>{attendee.name}</Item.Header>
                 </Item.Content>
               </Item>
             ))}
-        </List>
+        </Item.Group>
       </Segment>
     </div>
   );
