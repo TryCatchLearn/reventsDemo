@@ -1631,6 +1631,16 @@
         "csstype": "^2.2.0"
       }
     },
+    "@types/react-redux-toastr": {
+      "version": "7.4.1",
+      "resolved": "https://registry.npmjs.org/@types/react-redux-toastr/-/react-redux-toastr-7.4.1.tgz",
+      "integrity": "sha512-6yV8Vq1XeJx2mnwHEdsbgcvnPgOdgDUHUV/z/ZrXvnJ1VUhGZjzBM30ywb6YK/CqdEghxFIEmk4z4JEKvHEo5A==",
+      "dev": true,
+      "requires": {
+        "@types/react": "*",
+        "redux": "^3.6.0 || ^4.0.0"
+      }
+    },
     "@types/react-router": {
       "version": "5.0.0",
       "resolved": "https://registry.npmjs.org/@types/react-router/-/react-router-5.0.0.tgz",
@@ -4318,6 +4328,11 @@
           }
         }
       }
+    },
+    "date-fns": {
+      "version": "2.0.0-alpha.27",
+      "resolved": "https://registry.npmjs.org/date-fns/-/date-fns-2.0.0-alpha.27.tgz",
+      "integrity": "sha512-cqfVLS+346P/Mpj2RpDrBv0P4p2zZhWWvfY5fuWrXNR/K38HaAGEkeOwb47hIpQP9Jr/TIxjZ2/sNMQwdXuGMg=="
     },
     "date-now": {
       "version": "0.1.4",

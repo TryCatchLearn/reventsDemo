@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import EventList from '../EventList/EventList';
 import {createEvent, deleteEvent, updateEvent} from '../eventActions'
 import LoadingComponent from '../../../app/layout/LoadingComponent';
+import EventActivity from '../EventActivity/EventActivity';
 
 const mapState = (state) => ({
   events: state.events,
@@ -17,10 +18,15 @@ const actions = {
 }
 
 class EventDashboard extends Component {
+  state = {
+    contextRef: {}
+  }
 
   handleDeleteEvent = id => {
     this.props.deleteEvent(id);
   };
+
+  handleSetContextRef = (contextRef) => this.setState({contextRef})
 
   render() {
     const {events, loading} = this.props;
@@ -28,13 +34,16 @@ class EventDashboard extends Component {
     return (
       <Grid>
         <Grid.Column width={10}>
+          <div ref={this.handleSetContextRef}>
           <EventList
             events={events}
             deleteEvent={this.handleDeleteEvent}
           />
+          </div>
+
         </Grid.Column>
         <Grid.Column width={6}>
-          <h2>Activity Feed</h2>
+          <EventActivity contextRef={this.state.contextRef} />
         </Grid.Column>
       </Grid>
     );
