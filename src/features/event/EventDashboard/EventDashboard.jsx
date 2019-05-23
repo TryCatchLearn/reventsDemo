@@ -19,15 +19,9 @@ const actions = {
 };
 
 class EventDashboard extends Component {
-  state = {
-    contextRef: {}
-  };
-
   handleDeleteEvent = id => {
     this.props.deleteEvent(id);
   };
-
-  handleSetContextRef = contextRef => this.setState({ contextRef });
 
   render() {
     const { events, loading } = this.props;
@@ -40,7 +34,7 @@ class EventDashboard extends Component {
           </div>
         </Grid.Column>
         <Grid.Column width={6}>
-          <EventActivity contextRef={this.state.contextRef} />
+          <EventActivity />
         </Grid.Column>
       </Grid>
     );

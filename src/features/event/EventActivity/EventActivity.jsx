@@ -1,14 +1,14 @@
-import React from 'react'
-import { Header, Segment, Sticky } from 'semantic-ui-react';
+import React, {Fragment} from 'react'
+import { Header, Segment } from 'semantic-ui-react';
 
 const EventActivity = ({contextRef}) => {
   return (
-    <Sticky context={contextRef} offset={100}>
+    <Fragment>
         <Header attached='top' content='Recent Activity' />
         <Segment attached>
             <p>Recent activity</p>
         </Segment>
-    </Sticky>
+    </Fragment>
   )
 }
 
