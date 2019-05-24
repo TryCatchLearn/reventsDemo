@@ -8,7 +8,7 @@ import { openModal } from '../../modals/modalActions';
 import { withFirebase } from 'react-redux-firebase';
 
 const actions = {
-  openModal,
+  openModal
 };
 
 const mapState = state => ({
@@ -55,6 +55,7 @@ class NavBar extends Component {
           )}
           {authenticated ? (
             <SignedInMenu
+              auth={auth}
               signOut={this.handleSignOut}
               profile={profile}
             />
