@@ -21,7 +21,7 @@ const deleteEvent = (state, payload) => {
 
 const fetchEvents = (state, payload) => {
   return [
-    ...state, ...payload.events
+    ...payload.events
   ]
 }
 
