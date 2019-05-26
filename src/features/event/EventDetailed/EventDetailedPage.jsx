@@ -22,7 +22,7 @@ const mapState = (state, ownProps) => {
   ) {
     event = state.firestore.ordered.events.filter(
       event => event.id === eventId
-    )[0];
+    )[0] || {};
   }
 
   return {
