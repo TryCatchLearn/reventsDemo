@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { incrementAsync, decrementAsync } from './testActions';
+import { incrementAsync, decrementAsync, testPermission } from './testActions';
 import { Button } from 'semantic-ui-react';
 import TestPlaceInput from './TestPlaceInput';
 import SimpleMap from './SimpleMap';
@@ -16,7 +16,8 @@ const mapState = state => ({
 const actions = {
   incrementAsync,
   decrementAsync,
-  openModal
+  openModal,
+  testPermission
 };
 
 class TestComponent extends Component {
@@ -45,7 +46,8 @@ class TestComponent extends Component {
       decrementAsync,
       openModal,
       loading,
-      buttonName
+      buttonName,
+      testPermission
     } = this.props;
     return (
       <div>
@@ -54,14 +56,14 @@ class TestComponent extends Component {
         <Button
           name='increment'
           loading={buttonName === 'increment' && loading}
-          onClick={(e) => incrementAsync(e.target.name)}
+          onClick={e => incrementAsync(e.target.name)}
           positive
           content='Increment'
         />
         <Button
           name='decrement'
           loading={buttonName === 'decrement' && loading}
-          onClick={(e) => decrementAsync(e.target.name)}
+          onClick={e => decrementAsync(e.target.name)}
           negative
           content='Decrement'
         />
@@ -70,6 +72,7 @@ class TestComponent extends Component {
           color='teal'
           content='Open Modal'
         />
+        <Button onClick={testPermission} color='teal' content='Test Permission' />
         <br />
         <br />
         <TestPlaceInput selectAddress={this.handleSelect} />
