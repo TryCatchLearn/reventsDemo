@@ -22,7 +22,7 @@
     "react-redux-firebase": "^2.2.6",
     "react-redux-toastr": "^7.5.1",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "3.0.0",
+    "react-scripts": "5.0.1",
     "redux": "^4.0.1",
     "redux-auth-wrapper": "^2.1.0",
     "redux-firestore": "^0.3.2",
